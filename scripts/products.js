@@ -56,12 +56,48 @@ function initializeProductsPage() {
     searchInput.addEventListener("input", handleSearch)
   }
 
+  // Initialize mobile dropdown
+  initializeMobileDropdown()
+
   // Check for category parameter in URL
   const urlParams = new URLSearchParams(window.location.search)
   const categoryParam = urlParams.get("category")
   if (categoryParam) {
     selectCategory(categoryParam)
   }
+}
+
+function initializeMobileDropdown() {
+  const sidebar = document.querySelector(".categories-sidebar")
+  if (!sidebar) return
+
+  // Make the sidebar clickable to toggle dropdown (only on the ::before pseudo-element area)
+  sidebar.addEventListener("click", (e) => {
+    // Don't toggle if clicking on a category item
+    if (e.target.closest(".category-item")) {
+      return
+    }
+
+    // Toggle dropdown only on mobile
+    if (window.innerWidth <= 768) {
+      sidebar.classList.toggle("active")
+      const categoryList = document.getElementById("categoryList")
+      if (categoryList) {
+        categoryList.classList.toggle("active")
+      }
+    }
+  })
+
+  // Close dropdown when clicking outside
+  document.addEventListener("click", (e) => {
+    if (window.innerWidth <= 768 && sidebar && !sidebar.contains(e.target)) {
+      sidebar.classList.remove("active")
+      const categoryList = document.getElementById("categoryList")
+      if (categoryList) {
+        categoryList.classList.remove("active")
+      }
+    }
+  })
 }
 
 function loadCategoriesSidebar() {
@@ -114,6 +150,14 @@ function selectCategory(categorySlug) {
   // Update URL without page reload - proper URL handling
   const newUrl = categorySlug === "all" ? baseUrl : `${baseUrl}?category=${categorySlug}`
   window.history.pushState({}, "", newUrl)
+
+  // Close mobile dropdown if open
+  if (window.innerWidth <= 768) {
+    const sidebar = document.querySelector(".categories-sidebar")
+    const categoryList = document.getElementById("categoryList")
+    if (sidebar) sidebar.classList.remove("active")
+    if (categoryList) categoryList.classList.remove("active")
+  }
 
   // Load filtered products
   loadProducts()

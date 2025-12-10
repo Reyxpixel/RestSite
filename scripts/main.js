@@ -117,7 +117,6 @@ function loadHeader() {
                                 </li>
                                 <li><a href="about.html" class="nav-link ${currentPage === "about.html" ? "active" : ""}">About Us</a></li>
                                 <li><a href="contact.html" class="nav-link ${currentPage === "contact.html" ? "active" : ""}">Contact</a></li>
-                                <li><a href="payments.html" class="nav-link ${currentPage === "payments.html" ? "active" : ""}">Payments</a></li>
                             </ul>
                         </nav>
 
@@ -134,6 +133,16 @@ function loadHeader() {
                             <span></span>
                         </button>
                     </div>
+                </div>
+                <div class="mobile-contact-bar">
+                    <a href="tel:+919871124465">
+                        <i class="fas fa-phone"></i>
+                        <span>+91-9871124465</span>
+                    </a>
+                    <a href="mailto:glutenfreeindiainfo@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                        <span>glutenfreeindiainfo@gmail.com</span>
+                    </a>
                 </div>
             </header>
         `
@@ -179,7 +188,7 @@ function loadFooter() {
                             </a>
                             <p>Your trusted partner in healthy, gluten-free living. We provide premium quality gluten-free products made with all-natural ingredients for a healthier lifestyle.</p>
                             <div class="footer-social">
-                                <a href="https://www.instagram.com/glutenfreeindia" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="https://www.instagram.com/glutenfree_india/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                                 <a href="https://wa.me/919871124465" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
                             </div>
                         </div>
@@ -191,7 +200,6 @@ function loadFooter() {
                                 <li><a href="products.html"><i class="fas fa-shopping-bag"></i> Products</a></li>
                                 <li><a href="about.html"><i class="fas fa-info-circle"></i> About Us</a></li>
                                 <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-                                <li><a href="payments.html"><i class="fas fa-credit-card"></i> Payments</a></li>
                             </ul>
                         </div>
                         
@@ -200,12 +208,6 @@ function loadFooter() {
                             <p><i class="fab fa-whatsapp"></i> +91-9871124465</p>
                             <p><i class="fas fa-envelope"></i> glutenfreeindiainfo@gmail.com</p>
                             <p><i class="fas fa-map-marker-alt"></i> M-300, SPS Heights, Ahinsa Khand-2, Indirapuram, Ghaziabad, U.P. 201014</p>
-                        </div>
-                        
-                        <div class="footer-section">
-                            <h3>Timings</h3>
-                            <p><i class="fas fa-clock"></i> Orders: Till Thursday 3 P.M. Weekly</p>
-                            <p><i class="fas fa-truck"></i> Delivery: Saturday 10 A.M. - 6 P.M.</p>
                         </div>
                     </div>
                     
