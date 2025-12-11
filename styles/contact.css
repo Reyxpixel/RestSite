@@ -257,6 +257,18 @@
   border: 1px solid var(--border-color);
 }
 
+.map-container iframe {
+  width: 100%;
+  height: 600px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .map-container iframe {
+    height: 400px;
+  }
+}
+
 .faq-section {
   padding: 4rem 0;
   background: white;

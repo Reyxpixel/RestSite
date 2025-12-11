@@ -21,9 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100)
   }
 
-  // Initialize jump to products button
-  initializeJumpToProducts()
-
   // Handle URL routing
   handleURLRouting()
 
@@ -46,6 +43,7 @@ function initializeProductsPage() {
 
   // Load categories sidebar
   loadCategoriesSidebar()
+  updateCategoryTrigger()
 
   // Load products
   loadProducts()
@@ -121,6 +119,7 @@ function loadCategoriesSidebar() {
     .join("")
 
   categoryList.innerHTML = allCategoryItem + categoryItems
+  updateCategoryTrigger()
 }
 
 function selectCategory(categorySlug) {
@@ -136,16 +135,7 @@ function selectCategory(categorySlug) {
     activeItem.classList.add("active")
   }
 
-  // Update page title
-  const categoryTitle = document.getElementById("categoryTitle")
-  if (categoryTitle) {
-    if (categorySlug === "all") {
-      categoryTitle.textContent = "All Products"
-    } else {
-      const category = window.productsData.categories.find((cat) => cat.slug === categorySlug)
-      categoryTitle.textContent = category ? category.name : "Products"
-    }
-  }
+  updateCategoryTrigger()
 
   // Update URL without page reload - proper URL handling
   const newUrl = categorySlug === "all" ? baseUrl : `${baseUrl}?category=${categorySlug}`
@@ -167,18 +157,16 @@ function loadProducts() {
   const productsGrid = document.getElementById("productsGrid")
   if (!productsGrid) return
 
+  const searchInput = document.getElementById("searchInput")
+  const searchTerm = searchInput && searchInput.value.trim() ? searchInput.value.toLowerCase().trim() : ""
+
   let filteredProducts = allProducts
 
-  // Filter by category
-  if (currentCategory !== "all") {
+  // If searching, search across all categories; otherwise filter by selected category
+  if (searchTerm) {
+    filteredProducts = allProducts.filter((product) => product.name.toLowerCase().includes(searchTerm))
+  } else if (currentCategory !== "all") {
     filteredProducts = allProducts.filter((product) => product.category === currentCategory)
-  }
-
-  // Filter by search term
-  const searchInput = document.getElementById("searchInput")
-  if (searchInput && searchInput.value.trim()) {
-    const searchTerm = searchInput.value.toLowerCase().trim()
-    filteredProducts = filteredProducts.filter((product) => product.name.toLowerCase().includes(searchTerm))
   }
 
   if (filteredProducts.length === 0) {
@@ -196,23 +184,21 @@ function loadProducts() {
     .map(
       (product) => `
       <div class="product-card" data-product-slug="${product.slug}" onclick="highlightProduct(this, '${product.slug}')">
+            <button class="share-btn" onclick="shareProduct('${product.slug}', event)" title="Share Product">
+              <i class="fas fa-share-nodes"></i>
+            </button>
         <div class="product-image">
-          <img src="${product.image}" alt="${product.name}" loading="lazy">
+          <img src="${product.image}" alt="${product.name}" loading="lazy" onerror="handleImageError(this);">
         </div>
         <div class="product-info">
           <h3 class="product-name">${product.name}</h3>
-          <div class="product-actions">
-            <a href="https://api.whatsapp.com/send?phone=919871124465&text=I%20would%20like%20to%20order%20${encodeURIComponent(product.name)}" 
-               target="_blank" 
-               class="whatsapp-btn"
-               onclick="event.stopPropagation()">
-              <i class="fab fa-whatsapp"></i>
-              Order on WhatsApp
-            </a>
-            <button class="share-btn" onclick="shareProduct('${product.slug}', event)" title="Share Product">
-              <i class="fas fa-share-alt"></i>
-            </button>
-          </div>
+          <a href="https://api.whatsapp.com/send?phone=919871124465&text=I%20would%20like%20to%20order%20${encodeURIComponent(product.name)}" 
+             target="_blank" 
+             class="whatsapp-btn"
+             onclick="event.stopPropagation()">
+            <i class="fab fa-whatsapp"></i>
+            Order
+          </a>
         </div>
       </div>
     `,
@@ -222,6 +208,42 @@ function loadProducts() {
 
 function handleSearch() {
   loadProducts()
+}
+
+function initializeMobileDropdown() {
+  const sidebar = document.querySelector(".categories-sidebar")
+  const trigger = document.getElementById("categoryTrigger")
+  if (!sidebar || !trigger) return
+
+  trigger.addEventListener("click", (e) => {
+    e.preventDefault()
+    sidebar.classList.toggle("active")
+    const categoryList = document.getElementById("categoryList")
+    if (categoryList) {
+      categoryList.classList.toggle("active")
+    }
+  })
+
+  document.addEventListener("click", (e) => {
+    if (!sidebar.contains(e.target)) {
+      sidebar.classList.remove("active")
+      const categoryList = document.getElementById("categoryList")
+      if (categoryList) {
+        categoryList.classList.remove("active")
+      }
+    }
+  })
+}
+
+function updateCategoryTrigger() {
+  const trigger = document.getElementById("categoryTrigger")
+  if (!trigger) return
+  if (currentCategory === "all") {
+    trigger.textContent = "All Categories"
+  } else {
+    const category = window.productsData.categories.find((cat) => cat.slug === currentCategory)
+    trigger.textContent = category ? category.name : "Categories"
+  }
 }
 
 // Product Highlighting Functions
@@ -395,19 +417,6 @@ function handleURLRouting() {
         }
       }, 100)
     }
-  }
-}
-
-// Jump to Products Button
-function initializeJumpToProducts() {
-  const jumpBtn = document.getElementById("jumpToProducts")
-  if (jumpBtn) {
-    jumpBtn.addEventListener("click", () => {
-      const productsGrid = document.getElementById("productsGrid")
-      if (productsGrid) {
-        productsGrid.scrollIntoView({ behavior: "smooth" })
-      }
-    })
   }
 }
 

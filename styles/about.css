@@ -222,10 +222,15 @@
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .about-content {
+    padding: 2.5rem 0;
+  }
+
   .about-grid,
   .mission-grid {
     grid-template-columns: 1fr;
-    gap: 3rem;
+    gap: 2rem;
+    margin-bottom: 3rem;
   }
 
   .mission-grid .mission-image {
@@ -233,16 +238,38 @@
   }
 
   .about-text h2 {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
   }
 
   .about-stats {
     justify-content: center;
     flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
   }
 
   .values-grid {
     grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mission-section,
+  .values-section {
+    padding: 2.5rem 0;
   }
 }
 
@@ -250,14 +277,28 @@
   .about-content,
   .mission-section,
   .values-section {
-    padding: 4rem 0;
+    padding: 2rem 0;
+  }
+
+  .about-grid,
+  .mission-grid {
+    gap: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   .about-text h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
   }
 
   .value-card {
-    padding: 2rem;
+    padding: 1.5rem;
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
   }
 }

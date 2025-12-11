@@ -25,6 +25,67 @@
   --whatsapp-color: #25d366;
 }
 
+/* Purple Loading Animation for Broken Images */
+@keyframes purple-spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Hide broken image */
+img.image-loading {
+  opacity: 0;
+  position: relative;
+  display: block;
+}
+
+/* White background on container when image is broken */
+.category-image:has(img.image-loading),
+.product-image:has(img.image-loading) {
+  background: white;
+}
+
+/* Single loading spinner on parent container - properly centered */
+.category-image:has(img.image-loading)::after,
+.product-image:has(img.image-loading)::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(81, 46, 114, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: purple-spin 1s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Fallback spinner element - only used if :has() is not supported */
+.loading-spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border: 3px solid rgba(81, 46, 114, 0.3);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: purple-spin 1s linear infinite;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* Hide ::after spinner if .loading-spinner exists (fallback mode) */
+.category-image:has(.loading-spinner)::after,
+.product-image:has(.loading-spinner)::after {
+  display: none;
+}
+
 body {
   font-family: "Inter", sans-serif;
   line-height: 1.6;
@@ -63,12 +124,110 @@ body {
   box-shadow: var(--shadow-lg);
 }
 
+/* Temporary maintenance modal (remove when no longer needed) */
+.maintenance-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5000;
+  padding: 1rem;
+}
+
+.maintenance-content {
+  background: #ffffff;
+  border-radius: var(--border-radius-lg);
+  max-width: 420px;
+  width: 100%;
+  box-shadow: var(--shadow-lg);
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+.maintenance-content h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.75rem;
+}
+
+.maintenance-content p {
+  color: var(--text-light);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.maintenance-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text-light);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.maintenance-close:hover {
+  background: var(--primary-gradient-light);
+  color: var(--primary-color);
+}
 .header-content {
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   height: 70px;
   gap: 2rem;
+  padding: 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-self: end;
+  margin-right: -0.5rem;
+}
+
+.back-button {
+  display: none;
+  background: var(--primary-gradient);
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  box-shadow: var(--shadow-md);
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.back-button.show {
+  display: flex;
+}
+
+.back-button:hover {
+  transform: scale(1.1);
+  box-shadow: var(--shadow-lg);
+}
+
+.back-button i {
+  color: white;
 }
 
 .logo {
@@ -222,27 +381,44 @@ body {
 .contact-info {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 0.75rem;
   flex-shrink: 0;
   justify-self: end;
 }
 
-.contact-whatsapp {
+.contact-whatsapp,
+.contact-location {
   display: flex;
   align-items: center;
   gap: 6px;
-  color: var(--whatsapp-color);
   font-weight: 600;
   font-size: 0.85rem;
   transition: all 0.3s ease;
   text-decoration: none;
   padding: 6px 12px;
   border-radius: var(--border-radius-sm);
+  white-space: nowrap;
+}
+
+.contact-whatsapp {
+  color: var(--whatsapp-color);
   border: 1px solid var(--whatsapp-color);
 }
 
 .contact-whatsapp:hover {
   background: var(--whatsapp-color);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+.contact-location {
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+}
+
+.contact-location:hover {
+  background: var(--primary-gradient);
   color: white;
   transform: translateY(-1px);
   box-shadow: var(--shadow-sm);
@@ -379,6 +555,22 @@ body {
   display: flex;
   align-items: center;
   min-height: 220px; /* Reduced min-height */
+}
+
+@media (min-width: 769px) {
+  .page-header {
+    padding: 0px 0 110px;
+    min-height: 300px;
+  }
+
+  .page-header h1 {
+    font-size: 3.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .page-header p {
+    font-size: 1.2rem;
+  }
 }
 
 .page-header::before {
@@ -588,7 +780,7 @@ body {
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 2rem; /* Equal gap between columns */
   margin-bottom: 2rem;
   align-items: start;
@@ -876,7 +1068,8 @@ body {
   }
 
   .header-content {
-    gap: 1rem;
+    gap: 1.5rem;
+    padding: 0;
   }
 
   .footer-content {
@@ -892,8 +1085,38 @@ body {
 
   .header-content {
     grid-template-columns: auto 1fr auto;
-    gap: 1rem;
+    gap: 0.75rem;
     height: 60px;
+    padding: 0 1rem;
+  }
+
+  .back-button {
+    display: none;
+    justify-self: start;
+  }
+
+  .back-button.show {
+    display: flex;
+  }
+
+  .logo {
+    justify-self: center;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .contact-info {
+    display: none;
+  }
+
+  .menu-toggle {
+    justify-self: end;
+  }
+
+  .header-content:has(.back-button.show) {
+    grid-template-columns: auto 1fr auto;
   }
 
   .page-header {

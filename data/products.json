@@ -1,185 +1,118 @@
 {
   "categories": [
     {
-      "name": "Flours & Healthy Mixes",
+      "name": "Flours",
       "slug": "flours",
-      "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=400&h=300&fit=crop",
+      "image": "https://www.wheafree.com/collections/flour",
       "products": [
-        {
-          "name": "Gluten Free Flour Mix",
-          "slug": "gluten-free-flour-mix",
-          "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Multigrain Flour Mix",
-          "slug": "multigrain-flour-mix",
-          "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Ragi Flour",
-          "slug": "ragi-flour",
-          "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Jowar Flour",
-          "slug": "jowar-flour",
-          "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=400&fit=crop"
-        }
-      ]
-    },
-    {
-      "name": "Breads & Fresh Bakery",
-      "slug": "breads",
-      "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&h=300&fit=crop",
-      "products": [
-        {
-          "name": "Gluten Free White Bread",
-          "slug": "gluten-free-white-bread",
-          "image": "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Multigrain Bread",
-          "slug": "multigrain-bread",
-          "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Banana Bread",
-          "slug": "banana-bread",
-          "image": "https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?w=300&h=400&fit=crop"
-        }
-      ]
-    },
-    {
-      "name": "Cakes & Muffins",
-      "slug": "cakes",
-      "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop",
-      "products": [
-        {
-          "name": "Chocolate Muffins",
-          "slug": "chocolate-muffins",
-          "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Vanilla Cupcakes",
-          "slug": "vanilla-cupcakes",
-          "image": "https://images.unsplash.com/photo-1587668178277-295251f900ce?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Red Velvet Cake",
-          "slug": "red-velvet-cake",
-          "image": "https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=400&fit=crop"
-        }
+        { "name": "Gluten Free Jowar Atta (1kg)", "slug": "gluten-free-jowar-atta-1kg", "image": "https://www.wheafree.com/cdn/shop/files/jowar_atta_01.jpg?v=1725950540" },
+        { "name": "Gluten Free Maize Flour (Makki Atta) - 1Kg", "slug": "gluten-free-maize-flour-makki-atta-1kg", "image": "https://www.wheafree.com/cdn/shop/files/maize_flour_03.webp?v=1764998110" },
+        { "name": "Gluten Free Kuttu Atta (Buckwheat Flour) - 500g", "slug": "gluten-free-kuttu-atta-buckwheat-flour-500g", "image": "https://www.wheafree.com/cdn/shop/files/Kuttu_Atta.webp?v=1764998309" },
+        { "name": "Gluten Free Singhara Atta (Water Chestnut Flour) - 500g", "slug": "gluten-free-singhara-atta-water-chestnut-flour-500g", "image": "https://www.wheafree.com/cdn/shop/files/SingharaAtta.webp?v=1764998562" },
+        { "name": "Wheafree Besan", "slug": "wheafree-besan", "image": "https://www.wheafree.com/cdn/shop/files/Besan_600x.jpg?v=1685354547" },
+        { "name": "Bewell Ragi Flour", "slug": "bewell-ragi-flour", "image": "https://www.wheafree.com/cdn/shop/files/ragi_flour.jpg" },
+        { "name": "Bewell Rice Flour", "slug": "bewell-rice-flour", "image": "https://www.wheafree.com/cdn/shop/files/rice_flour.jpg" },
+        { "name": "Bewell Bajra Aata", "slug": "bewell-bajra-aata", "image": "https://www.wheafree.com/cdn/shop/files/bajra_aata.jpg" }
       ]
     },
     {
       "name": "Cookies & Biscuits",
-      "slug": "cookies",
-      "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=300&fit=crop",
+      "slug": "cookies-biscuits",
+      "image": "https://www.wheafree.com/collections/biscuits-cookies",
       "products": [
-        {
-          "name": "Chocolate Chip Cookies",
-          "slug": "chocolate-chip-cookies",
-          "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Oatmeal Cookies",
-          "slug": "oatmeal-cookies",
-          "image": "https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Digestive Biscuits",
-          "slug": "digestive-biscuits",
-          "image": "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=400&fit=crop"
-        }
+        { "name": "Gluten Free Elaichi Cookies", "slug": "gluten-free-elaichi-cookies", "image": "https://www.wheafree.com/cdn/shop/files/ElaichiCookies200g_7.jpg?v=1685357484" },
+        { "name": "Gluten Free Jeera Cookies", "slug": "gluten-free-jeera-cookies", "image": "https://www.wheafree.com/cdn/shop/files/JeeraCookies_8.jpg?v=1691144823" },
+        { "name": "Gluten Free Chocochip Cookies", "slug": "gluten-free-chocochip-cookies", "image": "https://www.wheafree.com/cdn/shop/files/03_6e7a16f6-92a4-42fd-a86e-72218a48b799.jpg?v=1685359752" },
+        { "name": "Gluten Free Choco D’Lite Biscuits - 100g", "slug": "gluten-free-choco-d-lite-biscuits-100g", "image": "https://www.wheafree.com/cdn/shop/files/ChocoD_lite_7.jpg?v=1691148542" },
+        { "name": "Gluten Free Jam Biscuits", "slug": "gluten-free-jam-biscuits", "image": "https://www.wheafree.com/cdn/shop/files/JamBiscuits_8.jpg?v=1685360149" },
+        { "name": "Gluten Free Coconut Cookies - 200g", "slug": "gluten-free-coconut-cookies-200g", "image": "https://www.wheafree.com/cdn/shop/files/03_668aba60-ca2e-4bef-b659-ce1f244917f0.jpg?v=1691146958" },
+        { "name": "Gluten Free Double Chocochip Cookies - 200g", "slug": "gluten-free-double-chocochip-cookies-200g", "image": "https://www.wheafree.com/cdn/shop/files/01_eb1843ce-2736-4b76-b00b-cd4a20a2f882.jpg?v=1688106565" },
+        { "name": "Gluten Free Pista Coconut Cookies - 200g", "slug": "gluten-free-pista-coconut-cookies-200g", "image": "https://www.wheafree.com/cdn/shop/files/PistaCoconutCookies_3.jpg?v=1691146665" },
+        { "name": "Gluten Free Ajwain Cookies - 200g", "slug": "gluten-free-ajwain-cookies-200g", "image": "https://www.wheafree.com/cdn/shop/files/02_31be6931-8294-4cee-a068-220163baeeba.jpg?v=1691146984" },
+        { "name": "Gluten Free Kaju Butter Cookies - 200g", "slug": "gluten-free-kaju-butter-cookies-200g", "image": "https://www.wheafree.com/cdn/shop/files/Kaju-Butter-Cookies_7.jpg?v=1691148460" },
+        { "name": "Gluten Free Choco Cookies", "slug": "gluten-free-choco-cookies", "image": "https://www.wheafree.com/cdn/shop/files/ChocoCookies_2.webp?v=1764998327" },
+        { "name": "Gluten Free Hi Fibre Digestive Cookies - 200g", "slug": "gluten-free-hi-fibre-digestive-cookies-200g", "image": "https://www.wheafree.com/cdn/shop/files/HiFibreCookies_9.jpg?v=1694845990" },
+        { "name": "Gluten Free Strawberry Cream Biscuits - 200g", "slug": "gluten-free-strawberry-cream-biscuits-200g", "image": "https://www.wheafree.com/cdn/shop/files/03_83a8d326-73fe-4ea0-b385-9c3d0662e3c3.jpg?v=1691148593" }
       ]
     },
     {
-      "name": "Snacks & Namkeen",
-      "slug": "snacks",
-      "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=400&h=300&fit=crop",
+      "name": "Ready To Eat",
+      "slug": "ready-to-eat",
+      "image": "https://www.wheafree.com/collections/ready-to-eat",
       "products": [
-        {
-          "name": "Multigrain Snack Mix",
-          "slug": "multigrain-snack-mix",
-          "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Roasted Chickpeas",
-          "slug": "roasted-chickpeas",
-          "image": "https://images.unsplash.com/photo-1606787366850-de6330128bfc?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Millet Crackers",
-          "slug": "millet-crackers",
-          "image": "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=300&h=400&fit=crop"
-        }
+        { "name": "Gluten Free Ready to Eat Masala Parantha (4Pc)", "slug": "gluten-free-ready-to-eat-masala-parantha-4pc", "image": "https://www.wheafree.com/cdn/shop/files/04_9a01f7e2-7444-4a77-ae97-ac1d8c108b11.jpg?v=1685689250" },
+        { "name": "Gluten Free Ready to Eat Masala Missi Roti (4pcs)", "slug": "gluten-free-ready-to-eat-masala-missi-roti-4pcs", "image": "https://www.wheafree.com/cdn/shop/files/MissiRoti_01.jpg?v=1705747400" },
+        { "name": "Gluten Free Ready to Eat Chapati (4pcs)", "slug": "gluten-free-ready-to-eat-chapati-4pcs", "image": "https://www.wheafree.com/cdn/shop/files/Chapati_4.jpg?v=1705747479" }
       ]
     },
     {
-      "name": "Breakfast Items",
-      "slug": "breakfast",
-      "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=400&h=300&fit=crop",
+      "name": "Indian Sweet Dishes",
+      "slug": "indian-sweets",
+      "image": "https://www.wheafree.com/collections/indian-sweets",
       "products": [
-        {
-          "name": "Granola Mix",
-          "slug": "granola-mix",
-          "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Muesli",
-          "slug": "muesli",
-          "image": "https://images.unsplash.com/photo-1574484284002-952d92456975?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Pancake Mix",
-          "slug": "pancake-mix",
-          "image": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=300&h=400&fit=crop"
-        }
+        { "name": "Gluten Free Gulab Jamun (Pack)", "slug": "gluten-free-gulab-jamun-pack", "image": "https://www.wheafree.com/cdn/shop/files/sweets_gulabjamun.jpg?v=1690000000" },
+        { "name": "Gluten Free Rasmalai (Pack)", "slug": "gluten-free-rasmalai-pack", "image": "https://www.wheafree.com/cdn/shop/files/sweets_rasmalai.jpg?v=1690000000" }
       ]
     },
     {
-      "name": "Pasta & Noodles",
-      "slug": "pasta",
-      "image": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?w=400&h=300&fit=crop",
+      "name": "Breads",
+      "slug": "breads",
+      "image": "https://www.wheafree.com/collections/bread-and-buns",
       "products": [
-        {
-          "name": "Rice Pasta Penne",
-          "slug": "rice-pasta-penne",
-          "image": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Quinoa Noodles",
-          "slug": "quinoa-noodles",
-          "image": "https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Millet Pasta",
-          "slug": "millet-pasta",
-          "image": "https://images.unsplash.com/photo-1551892374-ecf8754cf8b0?w=300&h=400&fit=crop"
-        }
+        { "name": "Gluten Free Bread (Eggless) (500g)", "slug": "gluten-free-bread-eggless-500g", "image": "https://www.wheafree.com/cdn/shop/files/regular-bread_01-1.jpg?v=1688210123" },
+        { "name": "Gluten Free Sandwich Bread (Eggless) (500g)", "slug": "gluten-free-sandwich-bread-eggless-500g", "image": "https://www.wheafree.com/cdn/shop/files/sanwich-bread-1.jpg?v=1688209940" },
+        { "name": "Gluten Free Pav – Eggless (6Pc)", "slug": "gluten-free-pav-eggless-6pc", "image": "https://www.wheafree.com/cdn/shop/files/PAV_5e13121e-730d-47a7-b1e2-ef62c5e6cf84.jpg?v=1721294709" },
+        { "name": "Gluten Free Burgers (4Pcs)", "slug": "gluten-free-burgers-4pcs", "image": "https://www.wheafree.com/cdn/shop/files/BURGER.jpg?v=1721278693" },
+        { "name": "Gluten Free Hotdog – Eggless (4Pc)", "slug": "gluten-free-hotdog-eggless-4pc", "image": "https://www.wheafree.com/cdn/shop/files/HOTDOG_f89bcf2a-c8f3-4fa6-93bd-b6a4ecd7493f.jpg?v=1721279213" },
+        { "name": "Gluten Free Pizza Base Eggless (2pcs)", "slug": "gluten-free-pizza-base-eggless-2pcs", "image": "https://www.wheafree.com/cdn/shop/files/pizza_base.jpg?v=1688209000" },
+        { "name": "Gluten Free Kulcha (2Pc)", "slug": "gluten-free-kulcha-2pc", "image": "https://www.wheafree.com/cdn/shop/files/KULCHA_a5cb304d-3fa7-4e4a-a702-60247572b9e9_600x.jpg?v=1721300276" }
       ]
     },
     {
-      "name": "Ready to Cook",
-      "slug": "ready-to-cook",
-      "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=400&h=300&fit=crop",
+      "name": "Pastas",
+      "slug": "pastas",
+      "image": "https://www.wheafree.com/collections/pasta-noodles",
       "products": [
-        {
-          "name": "Instant Dosa Mix",
-          "slug": "instant-dosa-mix",
-          "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Idli Mix",
-          "slug": "idli-mix",
-          "image": "https://images.unsplash.com/photo-1606491956689-2ea866880c84?w=300&h=400&fit=crop"
-        },
-        {
-          "name": "Upma Mix",
-          "slug": "upma-mix",
-          "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ca4b?w=300&h=400&fit=crop"
-        }
+        { "name": "Gluten Free Rice Noodles (200g)", "slug": "gluten-free-rice-noodles-200g", "image": "https://www.wheafree.com/cdn/shop/files/RiceNoodleBox_02.jpg?v=1714717962" },
+        { "name": "Gluten Free Rice Maize Penne Pasta (250g)", "slug": "gluten-free-rice-maize-penne-pasta-250g", "image": "https://www.wheafree.com/cdn/shop/files/pennepasta_7.jpg?v=1685439067" },
+        { "name": "Gluten Free Multigrain Fusilli (250g)", "slug": "gluten-free-multigrain-fusilli-250g", "image": "https://www.wheafree.com/cdn/shop/files/Fusilli_3.jpg?v=1685438653" },
+        { "name": "Gluten Free Multigrain Flat Spaghetti (200g)", "slug": "gluten-free-multigrain-flat-spaghetti-200g", "image": "https://www.wheafree.com/cdn/shop/files/61xIKPNDBpL.webp?v=1764998588" },
+        { "name": "Gluten Free Cup Noodles (100g)", "slug": "gluten-free-cup-noodles-100g", "image": "https://www.wheafree.com/cdn/shop/files/01-1.jpg?v=1686121653" }
       ]
+    },
+    {
+      "name": "Premixes",
+      "slug": "premixes",
+      "image": "https://www.wheafree.com/collections/premixes-batters",
+      "products": [
+        { "name": "Gluten Free Dosa/Idli Mix (500g)", "slug": "gluten-free-dosa-idli-mix-500g", "image": "https://www.wheafree.com/cdn/shop/files/Dosa-Mix-3.jpg?v=1686040549" },
+        { "name": "Gluten Free Bread Mix (1kg)", "slug": "gluten-free-bread-mix-1kg", "image": "https://www.wheafree.com/cdn/shop/files/bread_mix_03.jpg?v=1725950457" },
+        { "name": "Gluten Free Pancake Mix (500g)", "slug": "gluten-free-pancake-mix-500g", "image": "https://www.wheafree.com/cdn/shop/files/03_726f4afc-9b9a-4add-b2d8-e660f32cc77c.jpg?v=1697789683" },
+        { "name": "Gluten Free Cake Mix (500g)", "slug": "gluten-free-cake-mix-500g", "image": "https://www.wheafree.com/cdn/shop/files/Cake_Mix_03.jpg?v=1725947667" },
+        { "name": "Gluten Free Choco Cake Mix (500g)", "slug": "gluten-free-choco-cake-mix-500g", "image": "https://www.wheafree.com/cdn/shop/files/Choco_Cake_Mix.jpg?v=1725947700" }
+      ]
+    },
+    {
+      "name": "Rusks",
+      "slug": "rusks",
+      "image": "https://www.wheafree.com/collections/rusks",
+      "products": []
+    },
+    {
+      "name": "Savouries",
+      "slug": "savouries",
+      "image": "https://www.wheafree.com/collections/savoury-snacks",
+      "products": [
+        { "name": "Gluten Free Papri - 200g", "slug": "gluten-free-papri-200g", "image": "https://www.wheafree.com/cdn/shop/files/Papri.png?v=1725530845" },
+        { "name": "Gluten Free Golgappa - 100g", "slug": "gluten-free-golgappa-100g", "image": "https://www.wheafree.com/cdn/shop/files/golgappa-2-1.jpg?v=1688105451" },
+        { "name": "Savouries Gift Pack (various)", "slug": "savouries-gift-pack", "image": "https://www.wheafree.com/cdn/shop/files/01_72aeab4f-84b0-4d5f-808f-acd344749b69.webp?v=1764998847" }
+      ]
+    },
+    {
+      "name": "Extras",
+      "slug": "miscellaneous",
+      "image": "https://www.wheafree.com/collections/miscellaneous",
+      "products": []
     }
   ]
 }

@@ -20,6 +20,9 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize contact modal
   initializeContactModal()
 
+  // Initialize FAQ functionality
+  initializeFAQ()
+
   // Add scroll animations
   initializeScrollAnimations()
 
@@ -106,7 +109,24 @@ function loadHomeCategories() {
   const categoriesGrid = document.getElementById("categoriesGrid")
   if (!categoriesGrid || !window.productsData) return
 
-  categoriesGrid.innerHTML = window.productsData.categories
+  // Create "All Categories" card first
+  const allCategoriesCard = `
+    <div class="category-card" onclick="window.location.href='products.html'">
+        <div class="category-content">
+            <h3 class="category-name">All Product Categories</h3>
+            <p class="category-description">Browse our complete range of premium gluten-free products</p>
+            <button class="category-button">
+                <i class="fas fa-arrow-right"></i>
+            </button>
+        </div>
+        <div class="category-image">
+            <img src="images/all-categories.jpg" alt="All Categories" loading="lazy" onerror="handleImageError(this);">
+        </div>
+    </div>
+  `
+
+  // Create category cards
+  const categoryCards = window.productsData.categories
     .map(
       (category) => `
         <div class="category-card" onclick="window.location.href='products.html?category=${category.slug}'">
@@ -118,12 +138,14 @@ function loadHomeCategories() {
                 </button>
             </div>
             <div class="category-image">
-                <img src="${category.image}" alt="${category.name}" loading="lazy">
+                <img src="${category.image}" alt="${category.name}" loading="lazy" onerror="handleImageError(this);">
             </div>
         </div>
     `,
     )
     .join("")
+
+  categoriesGrid.innerHTML = allCategoriesCard + categoryCards
 }
 
 // Contact modal functionality
@@ -236,6 +258,31 @@ rippleStyles.textContent = `
     }
 `
 document.head.appendChild(rippleStyles)
+
+// FAQ functionality
+function initializeFAQ() {
+  const faqItems = document.querySelectorAll(".faq-item")
+
+  faqItems.forEach((item) => {
+    const question = item.querySelector(".faq-question")
+
+    if (question) {
+      question.addEventListener("click", () => {
+        const isActive = item.classList.contains("active")
+
+        // Close all FAQ items
+        faqItems.forEach((faq) => {
+          faq.classList.remove("active")
+        })
+
+        // Open clicked item if it wasn't active
+        if (!isActive) {
+          item.classList.add("active")
+        }
+      })
+    }
+  })
+}
 
 // Placeholder function for showNotification
 function showNotification(message, type) {
