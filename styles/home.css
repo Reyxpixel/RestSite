@@ -152,7 +152,7 @@
 
 .hero-stats {
   display: flex;
-  gap: 0.5rem;
+  gap: 2.5rem;
 }
 
 .stat {

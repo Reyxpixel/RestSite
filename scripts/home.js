@@ -120,7 +120,7 @@ function loadHomeCategories() {
             </button>
         </div>
         <div class="category-image">
-            <img src="images/all-categories.jpg" alt="All Categories" loading="lazy" onerror="handleImageError(this);">
+            <img src="https://www.wheafree.com/cdn/shop/files/01_92bc07bc-e461-46d0-b8dd-17da83c50e13.jpg?v=1699080819" alt="All Categories" loading="lazy" onerror="handleImageError(this);">
         </div>
     </div>
   `
