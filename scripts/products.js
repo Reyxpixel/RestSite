@@ -2,7 +2,6 @@
 
 let currentCategory = "all"
 let allProducts = []
-let currentHighlightedCard = null
 let baseUrl = ""
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -23,9 +22,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle URL routing
   handleURLRouting()
-
-  // Handle clicks outside highlighted card
-  document.addEventListener("click", handleOutsideClick)
 })
 
 function initializeProductsPage() {
@@ -61,7 +57,7 @@ function initializeProductsPage() {
   const urlParams = new URLSearchParams(window.location.search)
   const categoryParam = urlParams.get("category")
   if (categoryParam) {
-    selectCategory(categoryParam)
+    selectCategory(categoryParam, { updateUrl: false })
   }
 }
 
@@ -122,7 +118,8 @@ function loadCategoriesSidebar() {
   updateCategoryTrigger()
 }
 
-function selectCategory(categorySlug) {
+function selectCategory(categorySlug, options = {}) {
+  const { updateUrl = true } = options
   currentCategory = categorySlug
 
   // Update active state in sidebar
@@ -138,8 +135,12 @@ function selectCategory(categorySlug) {
   updateCategoryTrigger()
 
   // Update URL without page reload - proper URL handling
-  const newUrl = categorySlug === "all" ? baseUrl : `${baseUrl}?category=${categorySlug}`
-  window.history.pushState({}, "", newUrl)
+  if (updateUrl) {
+    const newUrl = categorySlug === "all" ? baseUrl : `${baseUrl}?category=${categorySlug}`
+    if (window.location.href !== newUrl) {
+      window.history.pushState({}, "", newUrl)
+    }
+  }
 
   // Close mobile dropdown if open
   if (window.innerWidth <= 768) {
@@ -183,7 +184,7 @@ function loadProducts() {
   productsGrid.innerHTML = filteredProducts
     .map(
       (product) => `
-      <div class="product-card" data-product-slug="${product.slug}" onclick="highlightProduct(this, '${product.slug}')">
+      <div class="product-card" data-product-slug="${product.slug}">
             <button class="share-btn" onclick="shareProduct('${product.slug}', event)" title="Share Product">
               <i class="fas fa-share-nodes"></i>
             </button>
@@ -243,66 +244,6 @@ function updateCategoryTrigger() {
   } else {
     const category = window.productsData.categories.find((cat) => cat.slug === currentCategory)
     trigger.textContent = category ? category.name : "Categories"
-  }
-}
-
-// Product Highlighting Functions
-function highlightProduct(cardElement, productSlug) {
-  // If already highlighted, unhighlight
-  if (currentHighlightedCard === cardElement) {
-    unhighlightProduct()
-    return
-  }
-
-  // Unhighlight any previously highlighted card
-  unhighlightProduct()
-
-  // Update URL properly - avoid double appending
-  const categoryParam = currentCategory !== "all" ? `?category=${currentCategory}&` : "?"
-  const newUrl = `${baseUrl}${categoryParam}product=${productSlug}`
-  window.history.pushState({ product: productSlug }, "", newUrl)
-
-  // Add blur overlay
-  let overlay = document.querySelector(".products-blur-overlay")
-  if (!overlay) {
-    overlay = document.createElement("div")
-    overlay.className = "products-blur-overlay"
-    document.body.appendChild(overlay)
-  }
-  overlay.classList.add("active")
-
-  // Highlight the card
-  cardElement.classList.add("highlighted")
-  currentHighlightedCard = cardElement
-
-  // Prevent body scroll
-  document.body.style.overflow = "hidden"
-}
-
-function unhighlightProduct() {
-  if (currentHighlightedCard) {
-    currentHighlightedCard.classList.remove("highlighted")
-    currentHighlightedCard = null
-  }
-
-  // Remove blur overlay
-  const overlay = document.querySelector(".products-blur-overlay")
-  if (overlay) {
-    overlay.classList.remove("active")
-  }
-
-  // Restore body scroll
-  document.body.style.overflow = "auto"
-
-  // Update URL back to products page properly
-  const categoryParam = currentCategory !== "all" ? `?category=${currentCategory}` : ""
-  const newUrl = `${baseUrl}${categoryParam}`
-  window.history.pushState({}, "", newUrl)
-}
-
-function handleOutsideClick(event) {
-  if (currentHighlightedCard && !currentHighlightedCard.contains(event.target)) {
-    unhighlightProduct()
   }
 }
 
@@ -398,37 +339,22 @@ function closeShareMenu() {
 // URL Routing - Fixed to handle proper URL structure
 function handleURLRouting() {
   const urlParams = new URLSearchParams(window.location.search)
-  const productParam = urlParams.get("product")
   const categoryParam = urlParams.get("category")
 
   // Handle category first
-  if (categoryParam && categoryParam !== currentCategory) {
-    selectCategory(categoryParam)
-  }
-
-  // Then handle product highlighting
-  if (productParam) {
-    const product = allProducts.find((p) => p.slug === productParam)
-    if (product) {
-      setTimeout(() => {
-        const productCard = document.querySelector(`[data-product-slug="${productParam}"]`)
-        if (productCard) {
-          highlightProduct(productCard, productParam)
-        }
-      }, 100)
-    }
+  const targetCategory = categoryParam || "all"
+  if (targetCategory !== currentCategory) {
+    selectCategory(targetCategory, { updateUrl: false })
   }
 }
 
 // Handle browser back/forward buttons
 window.addEventListener("popstate", () => {
-  unhighlightProduct()
   handleURLRouting()
 })
 
 // Make functions globally available
 window.selectCategory = selectCategory
-window.highlightProduct = highlightProduct
 window.shareProduct = shareProduct
 
 // Declare showNotification function

@@ -1,6 +1,23 @@
 {
   "categories": [
     {
+  "name": "Our Bakery",
+  "slug": "Our-Bakery",
+  "image": "images/Bakery/Cupcakes.png",
+  "products": [
+    {
+      "name": "Chocolate Chip Cupcakes",
+      "slug": "Chocolate-Chip-Cupcakes",
+      "image": "images/Bakery/Cupcakes.png"
+    },
+    {
+      "name": "Chocolate Chip Cupcakes",
+      "slug": "Chocolate-Chip-Cupcakes",
+      "image": "images/Bakery/Cupcakes.png"
+    }
+  ]
+},
+    {
   "name": "Flours",
   "slug": "flours",
   "image": "https://www.wheafree.com/cdn/shop/files/Flour-5Kg-1.jpg?v=1685354547",
