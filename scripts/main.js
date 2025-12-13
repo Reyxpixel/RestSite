@@ -10,9 +10,6 @@ document.addEventListener("DOMContentLoaded", () => {
     loadFooter()
   })
 
-  // Show temporary maintenance notice (one-time until dismissed)
-  showMaintenanceNotice()
-
   // Header scroll effect
   window.addEventListener("scroll", () => {
     const header = document.querySelector(".header")
@@ -308,7 +305,7 @@ function loadFooter() {
                                 <img src="logo.png" alt="Gluten Free India Logo">
                                 <span class="footer-logo-text">Gluten Free India</span>
                             </a>
-                            <p>Your trusted partner in healthy, gluten-free living. We provide premium quality gluten-free products made with all-natural ingredients for a healthier lifestyle.</p>
+                            <p>Your trusted partner in healthy, gluten free living. We provide premium quality gluten free products made with 100% gluten free ingredients.</p>
                             <div class="footer-social">
                                 <a href="https://www.instagram.com/glutenfree_india/" target="_blank" class="social-link"><i class="fab fa-instagram"></i></a>
                                 <a href="https://wa.me/919871124465" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>

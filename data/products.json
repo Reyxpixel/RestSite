@@ -1,69 +1,59 @@
 {
   "categories": [
     {
-      "name": "Our Bakery",
+      "name": "Our Bakery Delights",
       "slug": "our-bakery",
       "image": "images/Cupcakes.webp",
       "products": [
         {
-          "name": "Chocolate Chip Cupcakes",
+          "name": "Chocolate Chip Muffins",
           "slug": "chocolate-chip-cupcakes",
           "image": "images/Cupcakes.webp"
         },
         {
-          "name": "Chocolate",
-          "slug": "chocolate",
-          "image": ""
-        },
-        {
-          "name": "Fruit muffins",
+          "name": "Fruit and Nut Muffins",
           "slug": "fruit-muffins",
-          "image": ""
+          "image": "images/fanMuffins.png"
         },
         {
-          "name": "Choco dip muffins",
+          "name": "Jar Cake",
+          "slug": "jar-cake",
+          "image": "images/JarCakes.jpg"
+        },
+        {
+          "name": "Choco Dipped Muffins",
           "slug": "choco-dip-muffins",
-          "image": ""
+          "image": "images/chocodipped.jpg"
         },
         {
-          "name": "Slice cake chocolate",
+          "name": "Chocolate or Fruit and Nuts Slice Cake",
           "slug": "slice-cake-chocolate",
-          "image": ""
+          "image": "images/fruitSliceCake.png"
         },
         {
-          "name": "Slice cake fruit",
-          "slug": "slice-cake-fruit",
-          "image": ""
-        },
-        {
-          "name": "Round cake chocolate",
+          "name": "Chocolate or Fruit and Nuts Round Cake",
           "slug": "round-cake-chocolate",
-          "image": ""
+          "image": "images/fruitRoundCake.png"
         },
         {
-          "name": "Round cakes fruit",
-          "slug": "round-cakes-fruit",
-          "image": ""
+          "name": "Pineapple Pastry",
+          "slug": "pineapple-Pastry",
+          "image": "images/pineapplepastry.jpg"
         },
         {
-          "name": "Pineapple pastry",
-          "slug": "pineapple-pastry",
-          "image": ""
+          "name": "Black Forest Pastry",
+          "slug": "black-forest-Pastry",
+          "image": "images/blackForestPastry.jpg"
         },
         {
-          "name": "Black Forest pastry",
-          "slug": "black-forest-pastry",
-          "image": ""
-        },
-        {
-          "name": "Truffle pastry",
-          "slug": "truffle-pastry",
-          "image": ""
+          "name": "Truffle Pastry",
+          "slug": "truffle-Pastry",
+          "image": "images/trufflePastry.webp"
         },
         {
           "name": "Custom cakes",
           "slug": "custom-cakes",
-          "image": ""
+          "image": "images/customCake.jpeg"
         }
       ]
     },

@@ -12,6 +12,67 @@
   align-items: stretch;
 }
 
+/* Contact Map Card */
+.contact-map-container {
+  animation: slideInLeft 1s ease-out;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-map-card {
+  background: var(--primary-gradient);
+  color: white;
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-map-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="contactPattern" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/></pattern></defs><rect width="100" height="100" fill="url(%23contactPattern)"/></svg>');
+}
+
+.contact-map-card h3 {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  position: relative;
+  color: white;
+}
+
+.contact-map-card > p {
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.contact-map-card .section-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-color: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+
+.contact-map-card .map-container {
+  position: relative;
+}
+
+.contact-map-card .map-container iframe {
+  height: 520px;
+}
+
 /* Contact Form Card - Styled like Contact Info Card but with white form fields */
 .contact-form-container {
   animation: slideInLeft 1s ease-out;
@@ -199,13 +260,34 @@
 
 .contact-info-item {
   display: flex;
+  align-items: flex-start;
   gap: 1rem;
-  padding: 1rem;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: var(--border-radius-sm);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
+}
+
+.contact-whatsapp-link {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-whatsapp-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-decoration: none;
+  color: inherit;
 }
 
 .contact-info-item:hover {
@@ -238,6 +320,15 @@
   margin-bottom: 0.2rem;
   font-weight: 500;
   font-size: 0.9rem;
+}
+
+.contact-details a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
 }
 
 .contact-details span {
@@ -387,6 +478,10 @@
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .contact-map-card .map-container iframe {
+    height: 400px;
   }
 
   .contact-form-card h3,

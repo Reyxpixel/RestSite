@@ -17,9 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 100)
   }
 
-  // Initialize contact modal
-  initializeContactModal()
-
   // Initialize FAQ functionality
   initializeFAQ()
 

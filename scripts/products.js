@@ -22,7 +22,66 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Handle URL routing
   handleURLRouting()
+
+  // Initialize product image lightbox
+  initializeProductImageLightbox()
 })
+
+function initializeProductImageLightbox() {
+  const lightbox = document.getElementById("productImageLightbox")
+  const lightboxImg = document.getElementById("productImageLightboxImg")
+  const closeBtn = document.getElementById("productImageLightboxClose")
+  const productsGrid = document.getElementById("productsGrid")
+
+  if (!lightbox || !lightboxImg || !productsGrid) return
+
+  function openLightbox(src, alt) {
+    lightboxImg.classList.remove("image-loading")
+    lightboxImg.src = src
+    lightboxImg.alt = alt || ""
+    lightbox.classList.add("active")
+    lightbox.setAttribute("aria-hidden", "false")
+    document.body.style.overflow = "hidden"
+  }
+
+  function closeLightbox() {
+    lightbox.classList.remove("active")
+    lightbox.setAttribute("aria-hidden", "true")
+    lightboxImg.classList.remove("image-loading")
+    lightboxImg.removeAttribute("src")
+    document.body.style.overflow = "auto"
+  }
+
+  productsGrid.addEventListener("click", (e) => {
+    const img = e.target.closest(".product-image img")
+    if (!img) return
+
+    e.preventDefault()
+    e.stopPropagation()
+
+    openLightbox(img.getAttribute("src") || img.currentSrc || img.src, img.alt)
+  })
+
+  if (closeBtn) {
+    closeBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      closeLightbox()
+    })
+  }
+
+  lightbox.addEventListener("click", (e) => {
+    if (e.target === lightbox) {
+      closeLightbox()
+    }
+  })
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      closeLightbox()
+    }
+  })
+}
 
 function initializeProductsPage() {
   // Flatten all products from categories

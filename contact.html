@@ -32,64 +32,26 @@
     <section class="contact-section">
         <div class="container">
             <div class="contact-grid">
-                <!-- Contact Form -->
-                <div class="contact-form-container">
-                    <div class="contact-form-card">
+                <!-- Map -->
+                <div class="contact-map-container">
+                    <div class="contact-map-card">
                         <div class="section-badge">
-                            <i class="fas fa-envelope"></i>
-                            <span>Send Message</span>
+                            <i class="fas fa-map"></i>
+                            <span>Find Us</span>
                         </div>
-                        <h3>Get In Touch</h3>
-                        <p>We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
-                        
-                        <form class="contact-form" action="https://getform.io/f/ajjmozma" method="POST" id="contactForm">
-                            <div class="contact-form-list">
-                                <div class="contact-form-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-user"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Full Name</label>
-                                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-form-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-phone"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">Phone Number</label>
-                                        <input type="tel" id="phone" name="phone" required placeholder="Enter your phone number">
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-form-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-envelope"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="email">Email Address</label>
-                                        <input type="email" id="email" name="email" placeholder="Enter your email address">
-                                    </div>
-                                </div>
-                                
-                                <div class="contact-form-item">
-                                    <div class="contact-icon">
-                                        <i class="fas fa-map-marker-alt"></i>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="address">Address</label>
-                                        <input type="text" id="address" name="address" placeholder="Enter your address">
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary">
-                                <span>Send Message</span>
-                                <i class="fas fa-paper-plane"></i>
-                            </button>
-                        </form>
+                        <h3>Visit Our Location</h3>
+                        <p>Come visit our facility and see how we make our delicious gluten-free products</p>
+                        <div class="map-container">
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d760.459037645233!2d77.38223526099492!3d28.645946716002985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce554f4f90241%3A0xab7209d3a7c80b4c!2sGluten%20Free%20India%20celiac%20dietary%20store!5e1!3m2!1sen!2sin!4v1765478638723!5m2!1sen!2sin"
+                                width="100%" 
+                                height="600" 
+                                style="border:0;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
                     </div>
                 </div>
 
@@ -104,6 +66,17 @@
                         <p>We're here to help and answer any questions you might have.</p>
                         
                         <div class="contact-info-list">
+                            <a href="https://wa.me/919871124465?text=Hello%20I%20have%20a%20query" target="_blank" rel="noopener" class="contact-info-item contact-whatsapp-link">
+                                <div class="contact-icon">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>WhatsApp</h4>
+                                    <p>Have a query?</p>
+                                    <span>Tap to chat with us</span>
+                                </div>
+                            </a>
+
                             <div class="contact-info-item">
                                 <div class="contact-icon">
                                     <i class="fas fa-phone"></i>
@@ -153,67 +126,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Map Section -->
-    <section class="map-section">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-map"></i>
-                    <span>Find Us</span>
-                </div>
-                <h2>Visit Our Location</h2>
-                <p>Come visit our facility and see how we make our delicious gluten-free products</p>
-            </div>
-            <div class="map-container">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d760.459037645233!2d77.38223526099492!3d28.645946716002985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce554f4f90241%3A0xab7209d3a7c80b4c!2sGluten%20Free%20India%20celiac%20dietary%20store!5e1!3m2!1sen!2sin!4v1765478638723!5m2!1sen!2sin"
-                    width="100%" 
-                    height="600" 
-                    style="border:0;" 
-                    allowfullscreen="" 
-                    loading="lazy" 
-                    referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
-            </div>
-        </div>
-    </section>
-
-    <!-- Popup Form -->
-    <div class="popup-modal" id="popupForm">
-        <div class="popup-content">
-            <div class="popup-header">
-                <h3>Contact Gluten Free India</h3>
-                <button class="popup-close" id="popupClose">&times;</button>
-            </div>
-            <form class="popup-form" action="https://getform.io/f/ajjmozma" method="POST" id="popupContactForm">
-                <div class="form-group">
-                    <label for="popupName">Full Name*</label>
-                    <input type="text" id="popupName" name="name" required placeholder="Enter your full name">
-                </div>
-                <div class="form-group">
-                    <label for="popupPhone">Phone Number*</label>
-                    <input type="tel" id="popupPhone" name="phone" required placeholder="Enter your phone number">
-                </div>
-                <div class="form-group">
-                    <label for="popupEmail">Email Address</label>
-                    <input type="email" id="popupEmail" name="email" placeholder="Enter your email address">
-                </div>
-                <div class="form-group">
-                    <label for="popupAddress">Address</label>
-                    <input type="text" id="popupAddress" name="address" placeholder="Enter your address">
-                </div>
-                <div class="popup-checkbox">
-                    <input type="checkbox" id="dontShowAgain">
-                    <label for="dontShowAgain">Don't show this popup again</label>
-                </div>
-                <button type="submit" class="btn">
-                    <span>Send Message</span>
-                    <i class="fas fa-paper-plane"></i>
-                </button>
-            </form>
-        </div>
-    </div>
 
     <!-- Footer -->
     <div id="footer-placeholder"></div>

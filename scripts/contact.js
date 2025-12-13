@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Initialize contact form
   initializeContactForm()
 
-  // Initialize popup form
-  initializePopupForm()
-
   // Initialize FAQ functionality
   initializeFAQ()
 })

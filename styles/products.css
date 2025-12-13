@@ -782,3 +782,55 @@
   }
 
 }
+
+.product-image-lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 6000;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.product-image-lightbox.active {
+  display: flex;
+}
+
+.product-image-lightbox-img {
+  max-width: min(900px, 92vw);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 14px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.55);
+  background: white;
+}
+
+.product-image-lightbox-close {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.product-image-lightbox-close:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
